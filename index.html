@@ -2,24 +2,48 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Видеоплеер</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <title>Видеоплеер</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
+
 <body>
 
-<div style="width: 800px; margin: 0 auto;">
-  <div class="player" id="player">
-    <div class="js-video-container" style="width: 800px; height: 450px;"></div>
-  </div>
+  <div class="player player-centered" id="player">
+      <div class="js-video-container video-container"></div>
 
-  <div style="background: rgb(0, 0, 0); padding: 10px;">
-    <button class="js-play-button" style="border: none; background: transparent; cursor: pointer;">
-          <i class="fa fa-play" style="color: white;"></i>
-  </button>
-    <button class="js-pause-button" style="border: none; background: transparent; cursor: pointer;">
-          <i class="fa fa-pause" style="color: white;"></i>
-  </button>
+      <div class="player-buttons buttons-row">
+          <div class="controls-left">
+              <button class="js-play-button player-btn">
+                  <i class="fa fa-play"></i>
+              </button>
+              <button class="js-pause-button player-btn">
+                  <i class="fa fa-pause"></i>
+              </button>
+          </div>
+
+          <div class="controls-center">
+              <span class="js-current-time time-label">00:00</span>
+              <div class="progress-bar js-progress">
+                  <div class="js-progress-slider"></div>
+              </div>
+              <span class="js-duration time-label">00:00</span>
+          </div>
+          <div class="controls-right">
+              <button class="js-volume-button player-btn">
+                  <i class="fa fa-volume-up"></i>
+              </button>
+              <button class="js-mute-button player-btn">
+                  <i class="fa fa-volume-off"></i>
+              </button>
+              <button class="js-fullscreen-button player-btn">
+                  <i class="fa fa-expand"></i>
+              </button>
+          </div>
+      </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
@@ -28,3 +52,6 @@
   <script type="text/javascript">
     createPlayer({elementId: 'player'});
   </script>
+</body>
+
+</html>
