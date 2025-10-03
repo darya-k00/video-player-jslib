@@ -1,16 +1,17 @@
 .video-container {
-    height: 450px;
+    flex-grow: 1;
     background-color: black;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
-.player-centered {
-    margin: 0 auto;
-    width: 800px;
-}
 
 .player {
     display: flex;
     flex-direction: column;
+    width: 800px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     overflow: hidden;
@@ -21,19 +22,11 @@
     padding: 10px;
     height: 70px;
     box-sizing: border-box;
-}
-
-.buttons-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.controls-left,
-.controls-right {
-    display: flex;
-    gap: 16px;
-}
 
 .player-btn {
     width: 42px;
@@ -49,11 +42,11 @@
 
 .player-btn i {
     color: white;
-    font-size: 18px;
 }
 
 html,
 body {
     height: 100%;
     margin: 0;
+    display: flex;
 }
