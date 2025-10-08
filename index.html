@@ -3,39 +3,54 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Видеоплеер</title>
+  <title> Видеоплеер</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <div id="player">
+    <div class="js-video-container video-container"></div>
+    <div class="player-elements">
+      <button class="js-play-button player-button">
+        <i class="fa fa-play" aria-hidden="true"></i>
+      </button>
 
-  <div class="player player-centered" id="player">
-      <div class="js-video-container video-container"></div>
+      <button class="js-pause-button player-button"  >
+        <i class="fa fa-pause" aria-hidden="true"></i>
+      </button>
 
-      <div class="player-buttons buttons-row">
-          <div class="controls-left">
-              <button class="js-play-button player-button">
-                  <i class="fa fa-play"></i>
-              </button>
-              <button class="js-pause-button player-button">
-                  <i class="fa fa-pause"></i>
-              </button>
-              <button class="js-volume-button player-button">
-                  <i class="fa fa-volume-off"></i>
-              </button>
-              <button class="js-mute-button player-button">
-                  <i class="fa fa-volume-up"></i>
-              </button>
-          </div>
-          <div class="controls-right">
-              <button class="js-fullscreen-button player-button">
-                  <i class="fa fa-expand"></i>
-              </button>
-          </div>
+      <button class="js-volume-button player-button" hidden>
+        <i class="fa fa-volume-off" aria-hidden="true"></i>
+      </button>
+
+      <button class="js-mute-button player-button" hidden>
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
+      </button>
+
+
+      <div class="box-time">
+        <span class="js-current-time current-time"></span>
+
+        <div class="js-progress progressbar">
+          <div class="js-progress-slider slider"></div>
+          <div class="circle"></div>
+        </div>
+
+        <span class="js-duration duration-time"></span>
       </div>
-  </div>
+
+
+      <button class="js-fullscreen-button player-button button-fullscreen">
+        <i class="fa fa-expand" aria-hidden="true"></i>
+      </button>
+    </div>
+
+  </div>    
+</div>
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
